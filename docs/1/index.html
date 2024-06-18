@@ -13,6 +13,53 @@
 <link rel="stylesheet" href="asset/font/icon-moon/icon-moon-style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+:root{
+    /* https://developer.mozilla.org/ja/docs/Web/CSS/font-family */
+    --font-family-serif: 'Noto Serif JP', 'Source Han Serif JP', 'Noto Color Emoji', serif;   /* 明朝体 */
+    --font-family-sans: 'Noto Sans JP', 'Source Han Sans JP', 'Noto Color Emoji', sans-serif; /* ゴシック体 */
+    --font-family-mono: 'Noto Sans Mono', 'DejaVu Sans Mono', monospace; /* 等幅、ソースコード */
+    --font-family-emoji: 'Noto Color Emoji', emoji; /* 絵文字 */
+    --font-size: 16px;
+    --fg-color: black;
+    --bg-color: white;
+    --a-color: blue;
+    --writing-mode: horizontal-tb;
+    --text-orientation: mixed;
+    --em-style: filled sesame; /*none,filled,open   dot,circle,double-circle,triangle,sesame*/
+    --em-color: var(--fg-color);
+}
+body {
+    font-family: var(--font-family-serif);
+    font-size: var(--font-size);
+    color: var(--fg-color);
+    background-color: var(--bg-color);
+    writing-mode: var(--writing-mode);
+    text-orientation: var(--text-orientation);
+    --letter-spacing: 0.05em;
+    --line-height: 1.7em;
+}
+select,input,textarea,label {
+    font-size: var(--font-size);
+    color: var(--fg-color);
+    background-color: var(--bg-color);
+}
+a:link, a:visited, a:hover, a:active { color: var(--a-color); }
+h1,h2,h3,h4,h5,h6,label,fieldset,caption,th {
+    font-family: var(--font-family-sans);
+}
+pre, code {
+    font-family: var(--font-family-mono);
+}
+.tc {
+  -webkit-text-combine: horizontal;
+  -ms-text-combine-horizontal: all;
+  text-combine-upright: all;
+}
+em {
+    font-style: normal; /* 非イタリック化 */
+    text-emphasis: var(--em-style) var(--em-color);
+    -webkit-text-emphasis: var(--em-style) var(--em-color);
+}
 @font-face {
   font-family: 'icomoon';
   src:
@@ -49,9 +96,15 @@
     <!-- 所定のclass値を与えると表示される -->
     <span class="icon-mona"></span><br>
     <!-- 所定のfont-familyを与えた上で、文字コードやHTMLエスケープを入力すると表示される -->
-    <div class="icon-" style="font-family:icomoon;font-size:24px;color:white;background-color:black;">&nbsp;&#xe900;</div>
-    <pre style="font-family:icomoon;">&#xe900;</pre>
-    <h1>&#xe900;<i class="icon-mona"></i></h1>
+    <div class="icon-" style="font-family:icomoon;font-size:24px;color:white;background-color:black;">&#xe900;<i class="icon-mona"></i>divですよ。</div>
+    <pre style="font-family:icomoon;">プレーンテキスト。&#xe900;</pre>
+    <pre><code></code>print('Hello World');
+&#xe900;<i class="icon-mona"></i>
+0oO
+1liI
+</pre>
+    <h1>見出し。&#xe900;<i class="icon-mona"></i></h1>
+    <p>パラグラフ。&#xe900;<i class="icon-mona"></i><em>強調</em><ruby>山田<rt>やまだ</rt></ruby>上↑下↓左←右→…―ー「あ」あ、あ。a-_,.A-_,.:;iIl10oOｉＩｌ１０ｏＯａＡ12１２<span class="tc">12</span><span class="tc">１２</span>㎝<span class="tc">cm</span><span class="tc">ｃｍ</span></p>
     <footer></footer>
 </body>
 </html>

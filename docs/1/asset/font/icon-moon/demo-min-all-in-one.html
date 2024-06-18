@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>IcoMoon Demo Min</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--<link rel="stylesheet" href="style.css">-->
+<style>
+@font-face {
+  font-family: 'icomoon';
+  src:
+    url('fonts/icomoon.svg?1sc2gh#icomoon') format('svg'),
+    url('fonts/icomoon.woff?1sc2gh') format('woff'),
+    url('fonts/icomoon.ttf?1sc2gh') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-mona:before {
+  content: "\e900";
+}
+</style>
+</head>
+
+<body>
+    <!-- 文字コードやHTMLエスケープをそのまま入力しても表示されない -->
+    &#xe900;<br>
+
+    <!-- 所定のclass値を与えると表示される -->
+    <span class="icon-mona"></span><br>
+
+    <!-- 所定のfont-familyを与えた上で、文字コードやHTMLエスケープを入力すると表示される -->
+    <div class="icon-" style="font-family:icomoon;font-size:24px;color:white;background-color:black;">&nbsp;&#xe900;aaaaaaaa
+    </div>
+
+    <pre style="font-family:icomoon;">&#xe900;
+    </pre>
+</body>
+</html>
